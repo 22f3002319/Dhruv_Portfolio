@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block title %}Projects — Python Backend Engineer{% endblock %}
+
+{% block content %}
+<section class="py-5" id="automation-projects">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <h1 class="display-5 fw-bold mb-5 text-center">Some Minor Projects</h1>
+
+                {% for project in projects %}
+                {% set is_even = loop.index is even %}
+                <div class="project-row d-flex flex-column flex-lg-row align-items-stretch mb-5 {% if is_even %}project-row-reverse{% endif %}">
+                    <div class="project-text flex-lg-fill p-4">
+                        <h2 class="h4 mb-3 text-white">{{ project.title }}</h2>
+                        <p class="mb-3 text-white">{{ project.description }}</p>
+                        <div class="mb-3">
+                            {% for tech in project.tech_highlights %}
+                            <span class="badge bg-secondary me-1 mb-1">{{ tech }}</span>
+                            {% endfor %}
+                        </div>
+                        <div class="d-flex flex-wrap gap-2">
+                            {% if project.demo_url %}
+                            <a href="{{ project.demo_url }}"
+                               class="btn btn-sm btn-outline-primary"
+                               target="_blank"
+                               rel="noopener">
+                                Live Demo
+                            </a>
+                            {% elif project.demo_frontend %}
+                            <a href="{{ project.demo_frontend }}"
+                               class="btn btn-sm btn-outline-primary"
+                               target="_blank"
+                               rel="noopener">
+                                Frontend Demo
+                            </a>
+                            {% if project.demo_backend %}
+                            <a href="{{ project.demo_backend }}"
+                               class="btn btn-sm btn-outline-primary"
+                               target="_blank"
+                               rel="noopener">
+                                Backend Demo
+                            </a>
+                            {% endif %}
+                            {% endif %}
+
+                            {% if project.repo_url %}
+                            <a href="{{ project.repo_url }}"
+                               class="btn btn-sm btn-dark"
+                               target="_blank"
+                               rel="noopener">
+                                GitHub
+                            </a>
+                            {% endif %}
+                        </div>
+                    </div>
+                    
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

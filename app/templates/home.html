@@ -1,0 +1,287 @@
+{% extends "base.html" %}
+
+{% block title %}Home — Python Backend Engineer{% endblock %}
+
+{% block content %}
+<!-- Full-screen Hero Section -->
+<section class="hero-section" id="hero">
+    <!-- Blurred background image -->
+    <div class="hero-bg" style="background-image: url('/static/assets/PORTFOLIO_HOME.jpg');"></div>
+    <div class="hero-overlay-gradient"></div>
+
+    <div class="container hero-content">
+        <div class="row align-items-center">
+            <div class="col-lg-5 text-lg-start text-center mb-5 mb-lg-0">
+                <p class="text-uppercase text-accent mb-2 small">Backend Engineering · Trading Systems · AI & Data Science</p>
+                <h1 class="display-5 fw-semibold mb-3">
+                    Python Developer<br />
+                    <span class="text-muted-emphasis">(Backend Systems, Trading Platforms &amp; AI)</span>
+                </h1>
+                <p class="lead mb-4 hero-subtext">
+                    I design and build reliable backend systems for trading platforms,
+                    real-time alerts, and AI-powered services with a strong focus on
+                    correctness, scalability, observability, and failure handling.
+                </p>
+
+                <!-- Action Buttons -->
+                <div class="d-flex flex-wrap gap-3 mb-4 justify-content-center justify-content-lg-start">
+                    <a href="/case-studies" class="btn btn-primary btn-lg">
+                        View Case Studies
+                    </a>
+                    <a href="/projects" class="btn btn-outline-light btn-lg">
+                        View Projects
+                    </a>
+                    <a href="https://github.com/22f3002319" class="btn btn-dark btn-lg" target="_blank" rel="noopener">
+                        GitHub
+                    </a>
+                    <a href="https://www.linkedin.com/in/dhruv-b29720211/" class="btn btn-outline-primary btn-lg" target="_blank" rel="noopener">
+                        LinkedIn
+                    </a>
+                    <a href="/static/assets/Dhruv_Resume.pdf" class="btn btn-outline-light btn-lg" target="_blank" rel="noopener" download="Dhruv_Resume.pdf">
+                        Resume
+                    </a>
+                </div>
+            </div>
+
+            <!-- Foreground hero composition with hotspots -->
+            <div class="col-lg-7 d-flex justify-content-center justify-content-lg-end">
+                <div class="hero-foreground position-relative">
+                    <!-- Main desk + screens image -->
+                    <div class="hero-desk-wrapper">
+                        <img src="/static/assets/PORTFOLIO_HOME.jpg"
+                             alt="Desk with trading screens, robotic arm, Python book, and brain graphic"
+                             class="hero-desk-image" />
+
+                        <!-- Hotspots -->
+                        <button
+                            type="button"
+                            class="hotspot hotspot-brain"
+                            data-hover-title="Data Science &amp; AI"
+                            data-hover-lines="LLMs, NLP, model pipelines, inference systems"
+                            aria-label="Data Science &amp; AI hotspot">
+                        </button>
+
+                        <button
+                            type="button"
+                            class="hotspot hotspot-robotic-arm"
+                            data-hover-title="Automation &amp; Robotics Engineering"
+                            data-hover-lines="Navigate to automation-focused projects"
+                            data-action="scroll-automation"
+                            aria-label="Automation &amp; Robotics Engineering hotspot">
+                        </button>
+
+                        <button
+                            type="button"
+                            class="hotspot hotspot-trading-screen"
+                            data-hover-title="Trading Systems &amp; Algorithms"
+                            data-hover-lines="Navigate to trading system design case studies"
+                            data-action="goto-trading-case-studies"
+                            aria-label="Trading systems hotspot">
+                        </button>
+
+                        <button
+                            type="button"
+                            class="hotspot hotspot-code-screen"
+                            data-hover-title="Backend &amp; Python Development"
+                            data-hover-lines="Navigate to deployed backend and AI projects"
+                            data-action="goto-projects"
+                            aria-label="Backend and Python hotspot">
+                        </button>
+                    </div>
+
+                    <!-- Hover tooltip panel -->
+                    <div class="hotspot-tooltip" id="hotspot-tooltip">
+                        <div class="hotspot-title" id="hotspot-title">Hover over elements on the desk</div>
+                        <div class="hotspot-lines" id="hotspot-lines">
+                            Brain · Robotic arm · Trading screens · Code editor
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Rotating tech stack strip -->
+        <div class="tech-strip-wrapper mt-5">
+            <div class="tech-strip">
+                <span>Python</span>
+                <span>FastAPI</span>
+                <span>Django</span>
+                <span>PostgreSQL</span>
+                <span>Redis</span>
+                <span>Celery</span>
+                <span>Docker</span>
+                <span>LLMs</span>
+                <span>WebSockets</span>
+                <span>REST APIs</span>
+                <span>DBMS</span>
+                <span>AI</span>
+                <span>Data Science</span>
+                <!-- duplicate for seamless scroll -->
+                <span>Python</span>
+                <span>FastAPI</span>
+                <span>Django</span>
+                <span>PostgreSQL</span>
+                <span>Redis</span>
+                <span>Celery</span>
+                <span>Docker</span>
+                <span>LLMs</span>
+                <span>WebSockets</span>
+                <span>REST APIs</span>
+                <span>DBMS</span>
+                <span>AI</span>
+                <span>Data Science</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Experience Section -->
+<section class="py-5 section-surface">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <h2 class="text-center mb-5">Experience</h2>
+                
+                <div class="card shadow-sm">
+                    <div class="card-body p-4">
+                        <h3 class="h4 mb-2 text-white">Software Developer Intern — QuantTradeAI</h3>
+                        <p class="text-white-50 mb-4">February 2025 – December 2025</p>
+                        
+                        <p class="mb-4 text-white">
+                            Worked on backend systems supporting order placement, order lifecycle tracking, 
+                            and real-time trading alerts for a production trading platform.
+                        </p>
+                        
+                        <h4 class="h5 mb-3 text-white">Key Contributions:</h4>
+                        <ul class="list-unstyled mb-4">
+                            <li class="mb-2 text-white">
+                                <i class="bi bi-arrow-right-circle text-primary me-2"></i>
+                                Designed and maintained backend APIs for trading workflows
+                            </li>
+                            <li class="mb-2 text-white">
+                                <i class="bi bi-arrow-right-circle text-primary me-2"></i>
+                                Built asynchronous workers for reconciliation, notifications, and background processing
+                            </li>
+                            <li class="mb-2 text-white">
+                                <i class="bi bi-arrow-right-circle text-primary me-2"></i>
+                                Handled partial failures, retries, and idempotent execution paths
+                            </li>
+                            <li class="mb-2 text-white">
+                                <i class="bi bi-arrow-right-circle text-primary me-2"></i>
+                                Worked with production databases, queues, and monitoring pipelines
+                            </li>
+                        </ul>
+                        
+                        <div class="alert alert-secondary mb-0" role="alert">
+                            <strong>Note:</strong> Due to confidentiality, internal source code and proprietary workflows 
+                            are not publicly shared. Relevant system design and architecture work demonstrating similar 
+                            engineering principles is provided below.
+                        </div>
+                        <br>
+                        <div class="d-flex flex-wrap gap-3 mb-4 justify-content-center justify-content-lg-start">
+                            <a href="/case-studies" class="btn btn-outline-primary btn-lg">
+                                View Case Studies
+                            </a>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Chart Section -->
+<section class="py-5 section-surface">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="text-center mb-4">Focus Areas While Designing Trading Systems</h2>
+                <div class="chart-container" style="position: relative; height: 400px;">
+                    <canvas id="focusChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Engineering Principles Section -->
+<section class="py-5" id="engineering-principles">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="text-center mb-4">How I Thought while designing Trading Systems at QuantradeAI</h2>
+                <ul class="list-unstyled">
+                    <li class="mb-3">
+                        <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                        Design for failure before scale
+                    </li>
+                    <li class="mb-3">
+                        <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                        Prefer explicit state transitions over implicit logic
+                    </li>
+                    <li class="mb-3">
+                        <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                        Keep order execution deterministic and auditable
+                    </li>
+                    <li class="mb-3">
+                        <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                        Use asynchronous processing to isolate external dependencies
+                    </li>
+                    <li class="mb-3">
+                        <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                        Treat databases and queues as first-class system components
+                    </li>
+                    <li class="mb-3">
+                        <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                        Avoid tight coupling between signal, execution, and notification layers
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+    // Backend Engineering Focus Areas Chart
+    const ctx = document.getElementById('focusChart').getContext('2d');
+    const chartData = {{ chart_data | tojson }};
+    
+    new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: chartData.labels,
+            datasets: [{
+                data: chartData.data,
+                backgroundColor: chartData.colors,
+                borderWidth: 2,
+                borderColor: '#fff'
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        padding: 20,
+                        font: {
+                            size: 14
+                        }
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            return context.label + ': ' + context.parsed + '%';
+                        }
+                    }
+                }
+            }
+        }
+    });
+</script>
+{% endblock %}
+

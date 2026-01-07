@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}Case Studies — Python Backend Engineer{% endblock %}
+
+{% block content %}
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <h1 class="display-5 fw-bold mb-5 text-center">System Design Case Studies</h1>
+                
+                {% for case_study in case_studies %}
+                <div class="card mb-4 shadow-sm" id="{% if case_study.title.startswith('Trading System') %}trading{% endif %}">
+                    <div class="card-body p-4">
+                        <h2 class="card-title h3 mb-3 text-white">{{ case_study.title }}</h2>
+                        <p class="card-text text-white mb-4" style="white-space: pre-line;">{{ case_study.description }}</p>
+                        {% if case_study.repo_url %}
+                        <a href="{{ case_study.repo_url }}" 
+                           class="btn btn-primary" 
+                           target="_blank" 
+                           rel="noopener">
+                            View Repository
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+

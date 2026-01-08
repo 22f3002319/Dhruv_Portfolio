@@ -1,0 +1,177 @@
+{% extends "base.html" %}
+
+{% block title %}Resume — Dhruv - Backend Engineer{% endblock %}
+
+{% block extra_head %}
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/resume/resume.css">
+<style>
+    .resume-container {
+        background: #f5f7fa;
+        min-height: calc(100vh - 200px);
+        padding: 40px 20px;
+    }
+    .resume-wrapper {
+        max-width: 900px;
+        margin: 0 auto;
+        background: #fff;
+        padding: 40px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    /* Override base template styles for resume page */
+    .resume-wrapper * {
+        box-sizing: border-box;
+    }
+    .resume-wrapper .resume {
+        color: #333 !important;
+    }
+    @media (max-width: 768px) {
+        .resume-wrapper {
+            padding: 20px;
+        }
+        .resume-container {
+            padding: 20px 10px;
+        }
+    }
+    .download-section {
+        text-align: center;
+        margin-bottom: 30px;
+        padding-bottom: 20px;
+        border-bottom: 2px solid #e0e0e0;
+    }
+    .download-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 24px;
+        background: #0d6efd;
+        color: white;
+        text-decoration: none;
+        border-radius: 6px;
+        font-weight: 500;
+        transition: background 0.3s;
+    }
+    .download-btn:hover {
+        background: #0b5ed7;
+        color: white;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="resume-container">
+    <div class="resume-wrapper">
+        <!-- Download Button Section -->
+        <div class="download-section">
+            <a href="/static/assets/Dhruv_Resume.pdf" class="download-btn" download="Dhruv_Resume.pdf">
+                <i class="bi bi-download"></i>
+                Download Resume as PDF
+            </a>
+        </div>
+
+        <!-- Resume Content -->
+        <div class="resume">
+            <!-- LEFT COLUMN -->
+            <div class="left">
+                <h1>Dhruv</h1>
+                <h2>Python Developer | Backend Engineer | Trading Systems | AI & Data Science</h2>
+
+                <div class="contact">
+                    📞 <a href="tel:+91 8816019354">+91 8816019354</a><br>
+                    ✉️ <a href="mailto:dhruvdhruv554@gmail.com">dhruvdhruv554@gmail.com</a><br>
+                    🔗 <a href="https://www.linkedin.com/in/dhruv-b29720211/">LinkedIn</a><br>
+                    🌐 <a href="https://dhruv-portfolio-rosy.vercel.app/">dhruv-portfolio-rosy.vercel.app</a>
+                </div>
+
+                <section>
+                    <h3>Summary</h3>
+                    <p>
+                        Backend-focused Python Developer with experience building
+                        production-grade backend systems for trading platforms,
+                        real-time alert pipelines, and data-driven applications.
+                        Strong in FastAPI, async processing, databases, and system design.
+                    </p>
+                </section>
+
+                <section>
+                    <h3>Experience</h3>
+                    <div class="item">
+                        <strong>Software Developer Intern</strong><br>
+                        <a href="https://quantradeai.com/">QuantTradeAI LLP</a> · Feb 2025 – Dec 2025
+                        <ul>
+                            <li>Backend services for order placement and lifecycle management</li>
+                            <li>FastAPI REST APIs, Celery & Redis async workers</li>
+                            <li>Idempotent execution, retries, partial-failure recovery</li>
+                            <li>PostgreSQL/SQLite, caching, monitoring pipelines</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Education</h3>
+                    <p>
+                        <strong>B.Tech Automation & Robotics</strong><br>
+                        GGSIPU (2022–2026)
+                    </p>
+                    <p>
+                        <strong>BS Data Science & Programming</strong><br>
+                        IIT Madras (2022–2026)
+                    </p>
+                </section>
+
+                <section>
+                    <h3>Certifications</h3>
+                    <ul>
+                        <li>ADVANCED CERTIFICATE IN MACHINE LEARNING AND DATA SCIENCE - by IIT Madras</li>
+                        <li>ADVANCED CERTIFICATE IN PROGRAMMING AND APPLICATION DEVELOPMENT - by IIT Madras</li>
+                    </ul>
+                </section>
+            </div>
+
+            <!-- RIGHT COLUMN -->
+            <div class="right">
+                <img src="/static/resume/photo.jpg" class="profile-pic" alt="Dhruv Profile Picture">
+
+                <section>
+                    <h3>Skills</h3>
+                    <div class="skills">
+                        <span>Python</span><span>FastAPI</span><span>PostgreSQL</span>
+                        <span>Redis</span><span>Celery</span><span>Docker</span>
+                        <span>REST APIs</span><span>WebSockets</span>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Projects</h3>
+                    <ul>
+                        <li>ARIA v2.0 — Deployed</li>
+                        <li>IITM Assignment API</li>
+                        <li>LLM Agent</li>
+                        <li>Auto PPT Generator</li>
+                        <li>Vehicle Parking System</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>System Design Case Studies</h3>
+                    <ul>
+                        <a href="https://github.com/22f3002319/trading-system-design"><li>Trading System Architecture</li></a>
+                        <a href="https://github.com/22f3002319/trading-alerts-system-design"><li>Real-Time Trading Alerts</li></a>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Interests</h3>
+                    <ul>
+                        <li>Entrepreneurship</li>
+                        <li>Trading</li>
+                        <li>Fitness</li>
+                        <li>Learning New Technologies</li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

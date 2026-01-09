@@ -59,12 +59,13 @@ async def contact(request: Request):
         }
     )
 
-@router.get("/resume", response_class=HTMLResponse)
-async def resume(request: Request):
-    """Resume page route."""
+@router.get("/certificates", response_class=HTMLResponse)
+async def certificates(request: Request):
+    """Contact page route."""
     return templates.TemplateResponse(
-        "resume.html",
+        "certifications.html",
         {
-            "request": request
+            "request": request,
+            "certifications": certifications.get_certifications()
         }
     )

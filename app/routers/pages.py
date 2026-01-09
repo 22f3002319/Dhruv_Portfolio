@@ -10,7 +10,7 @@ templates = Jinja2Templates(directory="app/templates")
 
 router = APIRouter()
 
-from app.data import projects, experience, charts
+from app.data import projects, experience, charts, certifications
 
 
 @router.get("/", response_class=HTMLResponse)

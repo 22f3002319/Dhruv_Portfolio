@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}Certifications — Python Backend Engineer{% endblock %}
+
+{% block content %}
+<section class="py-5 section-surface">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <h1 class="display-5 fw-bold mb-5 text-center gradient-blue">Certifications</h1>
+
+                <div class="row row-cols-1 row-cols-md-2 g-4">
+                    {% for cert in certifications %}
+                    <div class="col">
+                        <div class="card shadow-sm h-100">
+                            <div class="card-body p-4">
+                                <div class="d-flex justify-content-between align-items-start mb-3">
+                                    <h3 class="h4 mb-0 text-white">{{ cert.title }}</h3>
+                                    <i class="bi bi-award-fill text-primary fs-4"></i>
+                                </div>
+                                <p class="text-white-50 mb-2">
+                                    <i class="bi bi-building me-2"></i>{{ cert.issuer }}
+                                </p>
+                                <p class="text-muted small mb-3">
+                                    <i class="bi bi-calendar me-2"></i>{{ cert.date }}
+                                </p>
+                                <p class="mb-4 text-white">{{ cert.description }}</p>
+                                <div class="d-flex flex-wrap gap-2">
+                                    <a href="{{ cert.pdf_path | replace(' ', '%20') }}" 
+                                       class="btn btn-sm btn-outline-primary" 
+                                       target="_blank" 
+                                       rel="noopener">
+                                        <i class="bi bi-file-earmark-pdf me-1"></i>View PDF
+                                    </a>
+                                    
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

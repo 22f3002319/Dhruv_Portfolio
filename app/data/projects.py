@@ -29,6 +29,7 @@ def get_case_studies():
                 "retry strategies, and horizontal scalability."
             )
         },
+        
         {
             "title": "Strategy Engineering & Automation",
             "repo_url": None,
@@ -52,6 +53,16 @@ def get_projects():
     """Return list of deployed projects."""
     return [
         {
+            "title": "Customer Purchase Value Prediction",
+            "description": (
+                "Predict how much a customer will spend during a session using behavioral, "
+                "device, traffic, and geographic data."
+            ),
+            "tech_highlights": ["Python", "pandas", "numpy", "scikit-learn", "matplotlib", "seaborn"],
+            "repo_url": "https://github.com/22f3002319/ml-customer-purchase-value-prediction"
+        },
+
+        {
             "title": "ARIA v2.0 — Two-way Sign Language Interpreter",
             "description": (
                 "Production-grade two-way sign language interpreter built for the "
@@ -62,7 +73,7 @@ def get_projects():
             "tech_highlights": ["FastAPI", "JWT", "PostgreSQL", "Async Processing"],
             "demo_frontend": "https://aria-eight-alpha.vercel.app/",
             "demo_backend": "https://aria-ddqo.onrender.com/",
-            "repo_url": "https://github.com/Tarunsai01/ARIA"
+            "repo_url": "https://github.com/22f3002319/ARIA"
         },
         {
             "title": "IITM Assignment API",

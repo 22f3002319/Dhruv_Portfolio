@@ -16,7 +16,7 @@ def get_case_studies():
             "design_decisions": [
                 "Explicit order state machine with audit logging",
                 "Idempotency via request IDs and DB constraints for exactly-once execution",
-                "Async processing (FastAPI + Celery) to isolate external dependencies",
+                "Async processing (FastAPI ) to isolate external dependencies",
                 "Multi-broker adapter pattern with circuit breakers and retry strategies",
                 "Transactional snapshots and careful schema design for analytics/backtesting"
             ],
@@ -34,16 +34,16 @@ def get_case_studies():
             "type": "Event-Driven Architecture",
             "repo_url": "https://github.com/22f3002319/trading-alerts-system-design",
             "summary": "Design of a dual-layer notification system serving strategy and execution events with strong delivery guarantees and horizontal scalability.",
-            "challenge": "Build a notification pipeline that reliably delivers 1,000+ alerts/day with <1s latency during market hours across Telegram and push notification channels.",
+            "challenge": "Build a notification pipeline that reliably delivers 1,000+ alerts/day with real time alerts delivery during market hours across Telegram and push notification channels.",
             "design_decisions": [
-                "Event sourcing using Redis Pub/Sub for low-latency distribution",
+                
                 "Dual delivery model: Telegram for strategy events, push notifications for execution status",
                 "Message IDs and deduplication to ensure idempotent delivery",
-                "Circuit breakers and throttling to handle external rate limits",
+                "Circuit breakers to handle external rate limits",
                 "WebSocket connection pooling and automatic reconnection handling"
             ],
             "results": [
-                "<1s end-to-end delivery latency",
+                "real time alerts end-to-end delivery ",
                 "High delivery success with retries for transient failures",
                 "Handled 5x traffic spikes during volatile market windows",
                 "Zero missed critical SL/TP alerts in monitored period"
@@ -139,5 +139,6 @@ def get_projects():
             "repo_url": "https://github.com/22f3002319/Vehicle-Parking-App---22f3002319"
         }
     ]
+
 
 

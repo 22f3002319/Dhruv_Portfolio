@@ -59,6 +59,10 @@ docker build -t portfolio .
 docker run -p 8000:8000 portfolio
 ```
 
+## Resume
+
+- LaTeX source: `/static/assets/resume/Dhruv_Backend_Engineer.tex` (compile to PDF locally or via Overleaf)
+
 ## Routes
 
 - `GET /` - Home page with hero section, tech stack, and focus areas chart

@@ -5,30 +5,72 @@
 {% block content %}
 <section class="py-5">
     <div class="container">
+        <div class="row mb-4">
+            <div class="col-lg-10 mx-auto text-center">
+                <h1 class="display-5 fw-bold mb-3">System Design Case Studies</h1>
+                <p class="lead mb-0">Deep dives into production system architecture, design decisions, and trade-offs for high-stakes financial systems and real-time infrastructure.</p>
+            </div>
+        </div>
+
         <div class="row">
             <div class="col-lg-10 mx-auto">
-                <h1 class="display-5 fw-bold mb-5 text-center">System Design Case Studies</h1>
-                
                 {% for case_study in case_studies %}
-                <div class="card mb-4 shadow-sm" id="{% if case_study.title.startswith('Trading System') %}trading{% endif %}">
+                <div class="card mb-4 shadow-sm" id="{{ case_study.slug if case_study.slug }}">
                     <div class="card-body p-4">
-                        <h2 class="card-title h3 mb-3 text-white">{{ case_study.title }}</h2>
-                        <p class="card-text text-white mb-4" style="white-space: pre-line;">{{ case_study.description }}</p>
-                        {% if case_study.repo_url %}
-                        <a href="{{ case_study.repo_url }}" 
-                           class="btn btn-primary" 
-                           target="_blank" 
-                           rel="noopener">
-                            View Repository
-                        </a>
-                        {% endif %}
+                        <div class="row">
+                            <div class="col-md-8">
+                                <h2 class="card-title h3 mb-3 text-white">{{ case_study.title }}</h2>
+                                {% if case_study.type %}
+                                <span class="badge bg-primary mb-3">{{ case_study.type }}</span>
+                                {% endif %}
+
+                                {% if case_study.summary %}
+                                <p class="card-text text-white mb-3">{{ case_study.summary }}</p>
+                                {% endif %}
+
+                                {% if case_study.challenge %}
+                                <h5 class="text-white mt-3">The Challenge</h5>
+                                <p class="text-white-50">{{ case_study.challenge }}</p>
+                                {% endif %}
+
+                                {% if case_study.design_decisions %}
+                                <h5 class="text-white mt-3">Key Design Decisions</h5>
+                                <ul class="text-white-50">
+                                    {% for d in case_study.design_decisions %}
+                                    <li>{{ d }}</li>
+                                    {% endfor %}
+                                </ul>
+                                {% endif %}
+
+                                {% if case_study.results %}
+                                <h5 class="text-white mt-3">Results</h5>
+                                <ul class="text-white-50">
+                                    {% for r in case_study.results %}
+                                    <li>{{ r }}</li>
+                                    {% endfor %}
+                                </ul>
+                                {% endif %}
+
+                                {% if case_study.repo_url %}
+                                <a href="{{ case_study.repo_url }}" class="btn btn-primary mt-2" target="_blank" rel="noopener">View Repository</a>
+                                {% endif %}
+                            </div>
+
+                            <div class="col-md-4 d-none d-md-block">
+                                {% if case_study.image %}
+                                <img src="{{ case_study.image }}" alt="{{ case_study.title }} diagram" class="img-fluid rounded">
+                                {% else %}
+                                <div class="p-3 bg-secondary rounded text-white text-center">Architecture diagram placeholder</div>
+                                {% endif %}
+                            </div>
+                        </div>
                     </div>
                 </div>
                 {% endfor %}
             </div>
         </div>
     </div>
-</section>
+</section> 
 {% endblock %}
 
 

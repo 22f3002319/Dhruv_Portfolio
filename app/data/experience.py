@@ -6,14 +6,17 @@ Experience and professional background data.
 def get_tech_stack():
     """Return list of technologies."""
     return [
+        "Python",
         "FastAPI",
-        "Django",
+        "Algorithmic Trading",
         "PostgreSQL",
         "Redis",
         "Celery",
         "Docker",
-        "REST APIs",
-        "WebSockets"
+        "WebSockets",
+        "Event-Driven Architecture",
+        "LangChain",
+        "AsyncIO"
     ]
 
 

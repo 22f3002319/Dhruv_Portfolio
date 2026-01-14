@@ -4,47 +4,69 @@ Project and case study data.
 
 
 def get_case_studies():
-    """Return list of case studies."""
+    """Return list of case studies with structured content."""
     return [
         {
-            "title": "Trading System Architecture",
+            "slug": "trading-system-architecture",
+            "title": "Algorithmic Trading System Architecture",
+            "type": "Production System",
             "repo_url": "https://github.com/22f3002319/trading-system-design",
-            "description": (
-                "A design-first architecture for a production-grade trading system, "
-                "focusing on order lifecycle modeling, API design, idempotency, "
-                "database schema design, asynchronous processing, failure recovery, "
-                "monitoring, and operational runbooks.\n\n"
-                "This repository contains architecture documents, diagrams, "
-                "and trade-off analysis without exposing proprietary code."
-            )
+            "summary": "Comprehensive system design for a production algorithmic trading platform focused on reliability, idempotency, and transactional correctness.",
+            "challenge": "Design a production trading system that handles ₹2 Cr deployed capital across multiple brokers with zero tolerance for financial errors, race conditions, or data loss.",
+            "design_decisions": [
+                "Explicit order state machine with audit logging",
+                "Idempotency via request IDs and DB constraints for exactly-once execution",
+                "Async processing (FastAPI + Celery) to isolate external dependencies",
+                "Multi-broker adapter pattern with circuit breakers and retry strategies",
+                "Transactional snapshots and careful schema design for analytics/backtesting"
+            ],
+            "results": [
+                "99.99% uptime over deployment period",
+                "1,000+ orders/day with zero financial discrepancies",
+                "Sub-100ms latency for critical signal-to-order paths",
+                "Zero data loss in face of external API failures"
+            ],
+            "image": "/static/assets/trading-system-architecture.png"
         },
         {
+            "slug": "real-time-alerts",
             "title": "Real-Time Trading Alerts Architecture",
+            "type": "Event-Driven Architecture",
             "repo_url": "https://github.com/22f3002319/trading-alerts-system-design",
-            "description": (
-                "A system design case study for a real-time trading alerts pipeline, "
-                "built using event-driven principles.\n\n"
-                "Focus areas include rule evaluation, alert deduplication, "
-                "backpressure handling, WebSocket-based delivery, "
-                "retry strategies, and horizontal scalability."
-            )
+            "summary": "Design of a dual-layer notification system serving strategy and execution events with strong delivery guarantees and horizontal scalability.",
+            "challenge": "Build a notification pipeline that reliably delivers 1,000+ alerts/day with <1s latency during market hours across Telegram and push notification channels.",
+            "design_decisions": [
+                "Event sourcing using Redis Pub/Sub for low-latency distribution",
+                "Dual delivery model: Telegram for strategy events, push notifications for execution status",
+                "Message IDs and deduplication to ensure idempotent delivery",
+                "Circuit breakers and throttling to handle external rate limits",
+                "WebSocket connection pooling and automatic reconnection handling"
+            ],
+            "results": [
+                "<1s end-to-end delivery latency",
+                "High delivery success with retries for transient failures",
+                "Handled 5x traffic spikes during volatile market windows",
+                "Zero missed critical SL/TP alerts in monitored period"
+            ],
+            "image": "/static/assets/alerts-system-architecture.png"
         },
-        
         {
+            "slug": "strategy-engineering",
             "title": "Strategy Engineering & Automation",
+            "type": "Strategy Engineering",
             "repo_url": None,
-            "description": (
-                "Designed and implemented multiple rule-based trading strategies with a focus on "
-                "deterministic execution logic and system integration readiness.\n\n"
-                "Engineering Focus:\n"
-                "• Clean separation between signal generation and execution\n"
-                "• Deterministic, reproducible rule evaluation\n"
-                "• Config-driven strategy parameters\n"
-                "• Outputs designed for direct integration with order and alert systems\n"
-                "• Validation and backtesting considerations\n\n"
-                "The emphasis is on engineering discipline and system compatibility, "
-                "not on exposing proprietary trading logic."
-            )
+            "summary": "Designed rule-based trading strategies focused on deterministic execution and system integration readiness.",
+            "challenge": "Create strategies that are reproducible, auditable, and directly integrable with execution and alerting layers without exposing proprietary logic.",
+            "design_decisions": [
+                "Separation between signal generation and execution",
+                "Config-driven parameters and test harness for backtesting",
+                "Validation pipelines and monitoring for deployed strategies"
+            ],
+            "results": [
+                "Produced deterministic signals ready for production execution",
+                "Integrated validation and backtesting artifacts for strategy QA"
+            ],
+            "image": None
         }
     ]
 
